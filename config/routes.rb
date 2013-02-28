@@ -1,4 +1,7 @@
 Rdio::Application.routes.draw do
+
+  get "(*redirect_path)", to: "batman#index", constraints: { format: /html/ }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
