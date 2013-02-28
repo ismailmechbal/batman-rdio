@@ -1,0 +1,2 @@
+ENV["RDIO_KEY"] = "upfp933x2b6z82ww35jfu3v6"
+ENV["RDIO_SECRET"] = "W6bzRWZuJE"
