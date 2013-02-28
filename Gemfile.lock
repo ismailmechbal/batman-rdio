@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/Shopify/batman-rails.git
+  revision: 0402c5206ee400c81091aece2e2148a4efe2c492
+  branch: batman-rails-revamp
+  specs:
+    batman-rails (0.0.9)
+      railties (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -108,6 +116,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  batman-rails!
   coffee-rails (~> 4.0.0.beta1)
   jbuilder (~> 1.0.1)
   jquery-rails
