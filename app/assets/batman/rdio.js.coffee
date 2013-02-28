@@ -19,6 +19,8 @@ Batman.extend Batman.config,
 
 class Rdio extends Batman.App
 
+  @resources 'songs'
+
   # @resources 'products'
   # @resources 'discounts', except: ['edit']
   # @resources 'customers', only: ['new', 'show']
