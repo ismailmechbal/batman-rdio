@@ -5,26 +5,27 @@ class Rdio.PlayerView extends Batman.View
 	source: "player/main"
 
 	@accessor 'isPlaying', ->
-		Rdio.get('currentTrack') && player.get('isPlaying')
+		Rdio.get('currentTrack') && @player.get('isPlaying')
 
 	playPause: ->
 		if @get('isPlaying')
-			player.pause()
+			@player.pause()
 		else
-			player.play()
+			@player.play()
 
 	ready: ->
 		new Batman.Request
 			url: '/tokens/playback.json'
-			success: (data) ->
-				flashVars =
-					playbackToken: data.token
-					domain: data.domain
-					listener: 'player'
+			success: (data) =>
+				@set 'player', new Rdio.Player(data)
 
-				params =
-					allowScriptAccess: 'always'
+				Rdio.observeAndFire 'currentTrack', (track) =>
+					if track
+						@player.play(track)
+					else
+						@player.stop()
 
-				attributes = {}
-
-				swfobject.embedSWF("http://www.rdio.com/api/swf", 'apiswf', 1, 1, '9.0.0', 'expressInstall.swf', flashVars, params, attributes)
+				@player.observe 'currentTime', (time) ->
+					console.log time
+					time =
+					$(@node).find('.playhead').style.left = time + 'px'

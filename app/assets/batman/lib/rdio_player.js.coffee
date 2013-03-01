@@ -1,19 +1,33 @@
-class Player extends Batman.Object
-	play: (track) -> @_player.rdio_play(track?.get('key'))
-	pause: -> @_player.rdio_pause()
-	stop: -> @_player.rdio_stop()
+class Rdio.Player extends Batman.Object
+	constructor: (data) ->
+		super()
+		window.rdio_player = this
+
+		flashVars =
+			playbackToken: data.token
+			domain: data.domain
+			listener: 'rdio_player'
+
+		params =
+			allowScriptAccess: 'always'
+
+		attributes = {}
+
+		swfobject.embedSWF("http://www.rdio.com/api/swf", 'apiswf', 1, 1, '9.0.0', 'expressInstall.swf', flashVars, params, attributes)
+
+	play: (track) -> @_rdio?.rdio_play(track?.get('key'))
+	pause: -> @_rdio?.rdio_pause()
+	stop: -> @_rdio?.rdio_stop()
 
 	playStateChanged: (state) ->
 		@set 'isPlaying', state in [1, 3]
 
+	positionChanged: (position) ->
+		@set 'currentTime', position
+
 	ready: (user) ->
-		console.log 'User', user
-		@_player = $('#apiswf').get(0)
+		@set 'user', user
+		@_rdio = $('#apiswf').get(0)
 
-		Rdio.observeAndFire 'currentTrack', (track) =>
-			if track
-				player.play(track)
-			else
-				player.stop()
-
-window.player = new Player
+	playingTrackChanged: ->
+		console.log arguments
