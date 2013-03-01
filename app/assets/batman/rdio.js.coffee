@@ -35,7 +35,7 @@ class Rdio extends Batman.App
   # @route 'apps', 'apps#index'
   # @route 'apps/private', 'apps#private', as: 'privateApps'
 
-  @root 'main#index'
+  @root 'artists#index'
 
 # Tell Batman to start the app
 window.Rdio = Rdio
