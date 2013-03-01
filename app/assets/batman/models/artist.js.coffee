@@ -4,6 +4,6 @@ class Rdio.Artist extends Batman.Model
   @persist Batman.RailsStorage
 
   @primaryKey: 'key'
-  @encode 'name'
+  @encode 'name', 'icon'
 
   @hasMany 'tracks', foreignKey: 'artist_key'

@@ -1,8 +1,11 @@
 <h1 data-bind="artist.name"></h1>
 <a data-route="routes.artists">Artists</a>
 
-<ul>
+<ul class="tracks">
 	<li data-foreach-track="artist.tracks">
-		<a data-bind="track.name" data-event-click="track.play"></a>
+		<a data-event-click="track.play">
+			<img data-bind-src="track.icon" />
+			<span data-bind="track.name"></span>
+		</a>
 	</li>
 </ul>

@@ -1,5 +1,7 @@
 <a data-event-click="playPause" data-addclass-playing="isPlaying">Play</a>
+
+<img data-bind-src="currentTrack.icon" />
 <h3 data-bind="currentTrack.name | default 'Nothing Playing'"></h3>
 <div class="playbar"><div class="playhead">x</div></div>
 
-<div id="player">Please enable Flash for Rdio playback.</div>
+<div id="player"></div>

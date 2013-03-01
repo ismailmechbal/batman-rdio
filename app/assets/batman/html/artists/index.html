@@ -1,7 +1,10 @@
-<h1>ArtistsController#index</h1>
+<h1>Artists</h1>
 
-<ul>
+<ul class="artists">
 	<li data-foreach-artist="artists">
-		<a data-route="artist" data-bind="artist.name"></a>
+		<a data-route="artist">
+			<img data-bind-src="artist.icon" />
+			<span data-bind="artist.name"></span>
+		</a>
 	</li>
 </ul>
