@@ -1,5 +1,5 @@
-class Rdio.SongsController extends Rdio.ApplicationController
-  routingKey: 'songs'
+class Rdio.TracksController extends Rdio.ApplicationController
+  routingKey: 'tracks'
 
   index: (params) ->
 

@@ -18,11 +18,8 @@ Batman.extend Batman.config,
   viewPrefix: '/assets/html'
 
 class Rdio extends Batman.App
-
   @resources 'artists'
-
-
-  @resources 'songs'
+  @resources 'tracks'
 
   # @resources 'products'
   # @resources 'discounts', except: ['edit']

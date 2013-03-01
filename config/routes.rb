@@ -3,7 +3,11 @@ Rdio::Application.routes.draw do
   # i think constraints aren't working in Rails 4 beta 1, this is a dirty workaround
   get "(*redirect_path)", to: "batman#index", constraints: lambda { |params, request| request.format == 'text/html' }
 
-  resources :artists
+  resources :artists do
+    resources :tracks
+  end
+
+  resources :tracks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

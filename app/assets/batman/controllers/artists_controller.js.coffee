@@ -2,9 +2,10 @@ class Rdio.ArtistsController extends Rdio.ApplicationController
   routingKey: 'artists'
 
   index: (params) ->
-  	@artists = Rdio.Artist.get('all')
+  	@set 'artists', Rdio.Artist.get 'all'
 
   show: (params) ->
+  	@set 'artist', Rdio.Artist.find params.id, @errorHandler()
 
   edit: (params) ->
 

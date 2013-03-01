@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/Shopify/batman-rails.git
-  revision: 56b59e73cbbfba9e3dbb061e4bf7d83495969214
+  revision: f5e7d223f28c24896e37e0f21393ad9a1260eb92
   branch: batman-rails-revamp
   specs:
     batman-rails (0.0.9)
