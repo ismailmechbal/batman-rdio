@@ -12,12 +12,121 @@
  *= require_tree .
  */
 
-.playing { background: #000; }
-
-.playbar { width: 250px; height: 12px; background: #ccc; position: relative;
-	.playhead { text-indent: -9999px; display: block; width: 12px; height: 12px; background: #000; position: absolute; top: 0; left: 0; }
+body {
+  margin: 0px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background-color: #e5e5e5;
 }
 
-.artists, .tracks { list-style: none;
-	img { max-width: 64px; }
+a {
+  text-decoration: none;
+  color: #777;
 }
+
+// Text
+
+h1 {
+  padding: 12px 0 0 0;
+}
+
+// Layout
+
+.wrapper {
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+.content {
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.playing { background-color: green; }
+
+.playbar { width: 100%; height: 24px; background-color: #222; position: relative; margin: -3px 0 0 0;
+	.playhead { text-indent: -9999px; display: block; width: 4px; height: 24px; background: #FFF; position: absolute; top: 0; left: 0; }
+}
+
+#player {
+  width: 0px;
+  height: 0px;
+}
+
+.artists, .tracks {
+  list-style: none;
+  padding: 0 0 24px 0;
+  a { 
+    width: 100%;
+    display: block;
+  }
+	img { max-width: 64px;
+  }
+  li:hover {
+    color: white;
+    background-color: #f2f2f2;
+  }
+}
+
+.main {
+  background-color: #FFF;
+  margin: 24px 0;
+}
+
+.player-controls {
+  background-color: #333;
+  text-align: center;
+  color: #FFF;
+  img {
+    width: 100%;
+  }
+}
+
+.player-controls-area {
+  background-color: #222;
+  text-align: center;
+  // margin: 0 24px;
+  a {
+    color: white;
+    padding: 24px;
+    display: block;
+  }
+  a:hover {
+    background-color: #2dc578;
+  }
+}
+
+
+// Tracks
+
+.track-list {
+  background-color: #FFF;
+  h1 {
+    padding: 0 24px;
+  }
+}
+
+.tracks {
+  margin: 0px;
+  padding: 0px;
+}
+
+.tracks li {
+  padding: 8px 24px;
+}
+
+// Navigation
+
+.navigation {
+  background-color: #f2f2f2;
+  a {
+    padding: 24px;
+    display: inline-block;
+  }
+  a:hover {
+    background-color: #e6e6e6;
+  }
+}
+
+
+

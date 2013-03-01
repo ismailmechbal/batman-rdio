@@ -1,7 +1,16 @@
-<a data-event-click="playPause" data-addclass-playing="isPlaying">Play</a>
 
-<img data-bind-src="currentTrack.icon" />
-<h3 data-bind="currentTrack.name | default 'Nothing Playing'"></h3>
-<div class="playbar"><div class="playhead">x</div></div>
+<div class="player-controls">
+  
+  <img data-bind-src="currentTrack.icon" />
+  <div class="playbar"><div class="playhead">x</div></div>
 
-<div id="player"></div>
+  <h3 data-bind="currentTrack.name | default 'Nothing Playing'"></h3>
+  <!-- <span data-bind="currentArtist.name"></span> -->
+  
+  <div class="player-controls-area">
+    <a data-event-click="playPause" data-addclass-playing="isPlaying">Play</a>
+  </div>
+  
+  
+  <div id="player"></div>
+</div>
