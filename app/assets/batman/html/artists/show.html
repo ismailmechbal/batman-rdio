@@ -3,6 +3,6 @@
 
 <ul>
 	<li data-foreach-track="artist.tracks">
-		<span data-bind="track.name"></span>
+		<a data-bind="track.name" data-event-click="track.play"></a>
 	</li>
 </ul>

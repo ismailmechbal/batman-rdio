@@ -7,3 +7,6 @@ class Rdio.Track extends Batman.Model
   @encode 'name'
 
   @belongsTo 'artist', foreignKey: 'artist_key'
+
+  play: ->
+  	Rdio.set 'currentTrack', this
