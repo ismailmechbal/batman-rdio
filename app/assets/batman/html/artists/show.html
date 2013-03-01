@@ -4,12 +4,14 @@
 
 <div class="track-list">
 	
-	<img data-bind-src="track.icon" />
+
 	<h1 data-bind="artist.name"></h1>
 	
 	<ul class="tracks">
+		
 		<li data-foreach-track="artist.tracks">
 			<a data-event-click="track.play">
+				<img data-bind-src="track.icon" />
 				<span data-bind="track.name"></span>
 			</a>
 		</li>
