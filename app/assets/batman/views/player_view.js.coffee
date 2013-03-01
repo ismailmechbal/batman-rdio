@@ -1,31 +1,37 @@
-#= require 'swfobject'
-#= require 'lib/rdio_player'
+#= require jquery.rdio
 
 class Rdio.PlayerView extends Batman.View
 	source: "player/main"
 
 	@accessor 'isPlaying', ->
-		Rdio.get('currentTrack') && @player.get('isPlaying')
+		Rdio.get('currentTrack') && @get('playState') == 1
+
+	@::observe 'currentPosition', (position) ->
+		$(@node).find('.playhead').css('left', position + '%')
 
 	playPause: ->
 		if @get('isPlaying')
-			@player.pause()
+			@rdio.pause()
 		else
-			@player.play()
+			@rdio.play()
 
 	ready: ->
 		new Batman.Request
 			url: '/tokens/playback.json'
 			success: (data) =>
-				@set 'player', new Rdio.Player(data)
+				@rdioNode = $(@node).find('#player')
+				@rdio = @rdioNode.rdio(data.token)
 
-				Rdio.observeAndFire 'currentTrack', (track) =>
-					if track
-						@player.play(track)
-					else
-						@player.stop()
+				@rdioNode.bind 'ready.rdio', =>
+					Rdio.observeAndFire 'currentTrack', (track) =>
+						if track
+							@rdio.play(track.get('key'))
+						else
+							@rdio.stop()
 
-				@player.observe 'currentTime', (time) ->
-					console.log time
-					time =
-					$(@node).find('.playhead').style.left = time + 'px'
+				@rdioNode.bind 'positionChanged.rdio', (e, time) =>
+					duration = Rdio.get('currentTrack.duration')
+					@set 'currentPosition', (time / duration) * 100
+
+				@rdioNode.bind 'playStateChanged.rdio', (e, state) =>
+					@set 'playState', state

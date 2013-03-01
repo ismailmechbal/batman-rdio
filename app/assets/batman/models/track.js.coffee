@@ -4,7 +4,7 @@ class Rdio.Track extends Batman.Model
   @persist Batman.RailsStorage
 
   @primaryKey: 'key'
-  @encode 'name'
+  @encode 'name', 'duration'
 
   @belongsTo 'artist', foreignKey: 'artist_key'
 
