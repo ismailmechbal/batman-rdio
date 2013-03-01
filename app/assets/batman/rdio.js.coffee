@@ -19,6 +19,9 @@ Batman.extend Batman.config,
 
 class Rdio extends Batman.App
 
+  @resources 'artists'
+
+
   @resources 'songs'
 
   # @resources 'products'
