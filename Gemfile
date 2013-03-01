@@ -24,6 +24,7 @@ gem 'batman-rails', git: "git://github.com/Shopify/batman-rails.git", branch: "b
 gem 'jbuilder', '~> 1.0.1'
 
 gem 'rdio'
+gem 'launchy'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
