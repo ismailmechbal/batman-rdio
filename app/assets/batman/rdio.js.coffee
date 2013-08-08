@@ -8,14 +8,12 @@
 
 #= require_self
 
+#= require_tree ./lib
 #= require_tree ./controllers
 #= require_tree ./models
 #= require_tree ./views
-#= require_tree ./lib
 
-Batman.extend Batman.config,
-  usePushState: true
-  viewPrefix: '/assets/html'
+Batman.config.pathToHTML = '/assets/html'
 
 class Rdio extends Batman.App
   @resources 'artists'
@@ -37,6 +35,4 @@ class Rdio extends Batman.App
 
   @root 'artists#index'
 
-# Tell Batman to start the app
-window.Rdio = Rdio
-Rdio.run()
+(global ? window).Rdio = Rdio

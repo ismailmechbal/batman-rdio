@@ -14,4 +14,3 @@ class Rdio.ArtistsController extends Rdio.ApplicationController
   update: (params) ->
 
   destroy: (params) ->
-

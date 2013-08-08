@@ -1,23 +1,12 @@
-Rdio::Application.routes.draw do
+BatmanRdio::Application.routes.draw do
 
-  # i think constraints aren't working in Rails 4 beta 1, this is a dirty workaround
-  get "(*redirect_path)", to: "batman#index", constraints: lambda { |params, request| request.format == 'text/html' }
-
-  resources :artists do
-    resources :tracks
-  end
-
-  resources :tracks
-
-  resources :tokens do
-    get 'playback', on: :collection
-  end
+  get "(*redirect_path)", to: "batman#index", constraints: { format: /html/ }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root to: 'welcome#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -53,6 +42,13 @@ Rdio::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
+  
+  # Example resource route with concerns:
+  #   concern :toggleable do
+  #     post 'toggle'
+  #   end
+  #   resources :posts, concerns: :toggleable
+  #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
   #   namespace :admin do

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rdio::Application.load_tasks
+BatmanRdio::Application.load_tasks
