@@ -1,0 +1,30 @@
+<div class="navigation">
+  <h1 data-bind="playlist.name"></h1>
+  <a data-event-click="update" class="fl">Save</a>
+  <a data-route="playlist" class="fr">Cancel</a>
+  <div class="clear"></div>
+</div>
+
+<ul class="list">
+  <li data-foreach-track="playlist.tracks" data-event-click="track.play">
+    <img data-bind-src="track.icon" />
+    <span data-bind="track.name"></span>
+    <a class="button" data-event-click="removeTrack">x</a>
+  </li>
+</ul>
+
+<h3>Popular Albums</h3>
+<ul class="list">
+  <li data-foreach-album="Album.popular" data-event-click="showAlbumTracks">
+    <img data-bind-src="album.icon" />
+    <span data-bind="album.name"></span>
+    <a data-event-click="addAlbum" class="button">+</a>
+
+    <ul class="list" data-showif="album.showTracks">
+      <li data-foreach-track="album.tracks">
+        <span data-bind="track.name"></span>
+        <a data-event-click="addTrack" class="button">+</a>
+      </li>
+    </ul>
+  </li>
+</ul>

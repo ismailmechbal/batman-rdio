@@ -3,18 +3,20 @@
 <head>
   <title>Batman Rdio</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script src="http://www.rdio.com/api/api.js?client_id=CGLDQweDHtrSZL-slIiYAQ&helper=/rdio_helper.html"></script>
   <%= javascript_include_tag "rdio" %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <div class="wrapper">
   <div class="content">
-  
+
     <div class="playerview" data-view="PlayerView"></div>
-    
+
     <div class="main" data-yield="main"></div>
-  
+
   </div>
 </div>
 

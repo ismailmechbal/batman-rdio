@@ -1,7 +1,9 @@
 BatmanRdio::Application.routes.draw do
 
-  get "(*redirect_path)", to: "batman#index", constraints: { format: /html/ }
 
+  get "(*redirect_path)", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+
+  resources :playlists
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -42,7 +44,7 @@ BatmanRdio::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

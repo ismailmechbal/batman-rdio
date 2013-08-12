@@ -1,16 +1,17 @@
 
 <div class="player-controls">
-  
+
   <img data-bind-src="currentTrack.icon" />
   <div class="playbar"><div class="playhead">x</div></div>
 
   <h3 data-bind="currentTrack.name | default 'Nothing Playing'"></h3>
-  <!-- <span data-bind="currentArtist.name"></span> -->
-  
+  <span data-bind="currentTrack.artist"></span>
+  <span data-bind="currentTrack.album.name"></span>
+
   <div class="player-controls-area">
     <a data-event-click="playPause" data-addclass-playing="isPlaying">Play</a>
   </div>
-  
-  
+
+
   <div id="player"></div>
 </div>

@@ -53,10 +53,10 @@ ul {
   height: 0px;
 }
 
-.artists, .tracks {
+.list {
   list-style: none;
   padding: 0;
-  a { 
+  a {
     width: 100%;
     display: inline-block;
   }
@@ -64,15 +64,25 @@ ul {
   }
   li:hover {
     color: white;
-    background-color: #f2f2f2;
+    background-color: #999;
+  }
+
+  a.button {
+    float: right;
+    display: block;
+    top: 0;
+    height: 100%;
+    background-color: #777;
+    color: #fff;
+    text-align: center;
   }
 }
 
-.artists a {
+.list a {
   padding: 6px 0px;
 }
 
-.artists img {
+.list img {
   vertical-align: -140%;
 }
 
@@ -143,19 +153,29 @@ ul {
 .navigation {
   background-color: #f2f2f2;
   a {
-    padding: 24px;
+    padding: 14px;
+    margin-top: -30px;
     display: inline-block;
   }
   a:hover {
     background-color: #e6e6e6;
   }
   h1 {
-    padding: 24px;
+    padding: 20px;
     text-align: center;
     font-size: 24px;
     color: #999;
   }
 }
 
+.fl {
+  float: left;
+}
 
+.fr {
+  float: right;
+}
 
+.clear {
+  clear: both;
+}

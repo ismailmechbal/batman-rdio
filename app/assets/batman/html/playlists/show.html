@@ -1,0 +1,13 @@
+<div class="navigation">
+  <h1 data-bind="playlist.name"></h1>
+  <a data-route="url_for.playlists" class="fl">All Playlists</a>
+  <a data-route="url_for.playlists[playlist].edit" class="fr">Edit</a>
+  <div class="clear"></div>
+</div>
+
+<ul class="list">
+  <li data-foreach-track="playlist.tracks" data-event-click="track.play">
+    <img data-bind-src="track.icon" />
+    <span data-bind="track.name"></span>
+  </li>
+</ul>

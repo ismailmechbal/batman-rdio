@@ -14,9 +14,10 @@
 #= require_tree ./views
 
 Batman.config.pathToHTML = '/assets/html'
+Batman.View::cache = false
 
 class Rdio extends Batman.App
-  @resources 'artists'
+  @resources 'playlists'
   @resources 'tracks'
 
   # @resources 'products'
@@ -33,6 +34,6 @@ class Rdio extends Batman.App
   # @route 'apps', 'apps#index'
   # @route 'apps/private', 'apps#private', as: 'privateApps'
 
-  @root 'artists#index'
+  @root 'playlists#index'
 
 (global ? window).Rdio = Rdio

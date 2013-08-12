@@ -1,0 +1,13 @@
+<div class="navigation">
+  <h1>New Playlist</h1>
+  <a data-event-click="create" class="fl">Save</a>
+  <a data-route="url_for.playlists" class="fr">Cancel</a>
+  <div class="clear"></div>
+</div>
+
+<form data-formfor-list="playlist" data-event-submit="create">
+  <div>
+    <label>Name:</label>
+    <input data-bind="list.name" />
+  </div>
+</form>

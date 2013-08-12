@@ -1,12 +1,13 @@
 class Rdio.Track extends Batman.Model
   @resourceName: 'tracks'
   @storageKey: 'tracks'
-  @persist Batman.RailsStorage
+
+  @persist Rdio.RdioStorage
 
   @primaryKey: 'key'
-  @encode 'name', 'duration', 'icon'
+  @encode 'name', 'duration', 'icon', 'artist'
 
-  @belongsTo 'artist', foreignKey: 'artist_key'
+  @belongsTo 'album', foreignKey: 'album_key'
 
   play: ->
-  	Rdio.set 'currentTrack', this
+    Rdio.set 'currentTrack', this
