@@ -1,5 +1,7 @@
-PATH
-  remote: ~/Code/batman/batman-rails
+GIT
+  remote: git://github.com/batmanjs/batman-rails.git
+  revision: f33f728223c11d97b29699159f548932793dd8ec
+  branch: batman-rails-revamp
   specs:
     batman-rails (0.0.9)
       railties (>= 3.2)

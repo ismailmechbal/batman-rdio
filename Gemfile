@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'batman-rails', path: "~/Code/batman/batman-rails"
+gem 'batman-rails', git: 'git://github.com/batmanjs/batman-rails.git', branch: 'batman-rails-revamp'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
