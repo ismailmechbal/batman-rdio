@@ -15,6 +15,9 @@ onMessage = (event) ->
   else if event.data == 'run'
     Rdio.run()
 
+  else if event.data == 'reload'
+    window.location.reload()
+
 window.addEventListener 'message', onMessage, false
 
 $ ->
