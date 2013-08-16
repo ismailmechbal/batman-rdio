@@ -16,6 +16,7 @@ body {
   margin: 0px;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   background-color: #e5e5e5;
+  color: #333;
 }
 
 a {
@@ -29,9 +30,28 @@ ul {
 }
 
 // Text
+.nav-section-title {
+  padding: 15px 15px;
+  margin: 0;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color: #ACACAC;
+  text-shadow: 0 1px #fff;
+  letter-spacing: 0.2em;
+  font-weight: 300;  
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid #fff;
+  box-shadow: 0 -1px 0 #e7e7e7;
 
+  background: #f7f7f7;
+}
 
 // Layout
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after { clear:both; }
 
 .wrapper {
   width: 100%;
@@ -62,19 +82,19 @@ ul {
   }
 	img { max-width: 64px;
   }
-  li:hover {
-    color: white;
-    background-color: #999;
-  }
 
   a.button {
     float: right;
-    display: block;
     top: 0;
     height: 100%;
-    background-color: #777;
-    color: #fff;
+    background-color: #FFF;
+    color: #949494;
     text-align: center;
+    font-weight: bold;
+  }
+
+  &.albums {
+    border-bottom: 1px solid #ccc;
   }
 }
 
@@ -165,6 +185,8 @@ ul {
     text-align: center;
     font-size: 24px;
     color: #999;
+    font-weight: 100;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -178,4 +200,98 @@ ul {
 
 .clear {
   clear: both;
+}
+
+.playlist-item {
+  padding-top: 15px;
+
+  &:hover {
+    a { color: white }
+    background-color: #3092d6;
+  }
+
+  .playlist-name {
+    margin-left: 12px;
+    padding-bottom: 0;
+  }
+}
+
+
+.playlist-link {
+  padding: 0;
+}
+
+.album-list-item {
+  display: block;
+  clear: both;
+  cursor: pointer;
+
+  .button {
+    float: right;
+    width: 10%;
+    padding: 0;
+    background-color: #aaa;
+    .add, .remove { display: block; margin-top: 6px; }
+
+    &:hover {
+      color: white;
+      background-color: #70b9f4;
+    }
+  }
+
+  .album-meta + .button {
+    .add, .remove { margin: 18px 0 27px }
+  }
+
+  &:hover > .button {
+    color: white;
+    background-color: #70b9f4;
+  }
+
+  &:hover > .album-meta {  
+    color: white;
+    background-color: #3092d6;
+  }
+
+  .album-meta {
+    float: left;
+    width: 90%;
+    height: 64px;
+    .album-name {
+      max-width: 285px;
+      padding-left: 5px;
+      display: inline-block;
+    }
+  }
+
+  .track-meta {
+    height: 36px;
+    clear: both;
+
+    .track-name { 
+      padding: 8px 0px; 
+      display: inline-block; 
+      margin-left: 10px;
+      max-width: 330px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:hover {
+      color: white;
+      background-color: #3092d6;
+
+      .button {
+        color: white;
+        background-color: #70b9f4;
+      }
+    }
+  }
+}
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
 }

@@ -6,10 +6,10 @@
 </div>
 
 <ul class="list">
-  <li data-foreach-list="playlists">
-    <a data-route="list">
+  <li class="playlist-item" data-foreach-list="playlists">
+    <a class="playlist-link" data-route="list">
       <img data-bind-src="list.icon" />
-      <span data-bind="list.name"></span>
+      <span class="playlist-name" data-bind="list.name"></span>
     </a>
   </li>
 </ul>
