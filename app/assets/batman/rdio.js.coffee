@@ -4,6 +4,7 @@
 #= require batman/batman.rails
 
 #= require jquery
+#= require jquery.ui.sortable
 #= require batman/batman.jquery
 
 #= require_self
