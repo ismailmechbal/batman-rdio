@@ -16,6 +16,12 @@ class Rdio.PlaylistsEditView extends Batman.View
 
     playlist.get('tracks').add(track)
 
+  removeTrack: (node, event, view) ->
+    track = view.get('track')
+    playlist = view.lookupKeypath('playlist')
+
+    playlist.get('tracks').remove(track)
+
   searchQuery: ''
   searchResults: null
   searchRdio: ->
