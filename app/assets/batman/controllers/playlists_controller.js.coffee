@@ -23,6 +23,5 @@ class Rdio.PlaylistsController extends Rdio.ApplicationController
   destroy: (params) ->
 
   fetchPlaylist: (params) ->
-    Rdio.Playlist.find params.id, (error, list) =>
-      throw error if error
+    Rdio.Playlist.find params.id, @errorHandler (list) =>
       @set('playlist', list)
