@@ -6,8 +6,8 @@
 </div>
 
 <ul class="list">
-  <li class="album-list-item clearfix" data-foreach-track="playlist.tracks" data-event-click="track.play">
-    <div class="album-meta">
+  <li class="album-list-item clearfix" data-foreach-track="playlist.tracks">
+    <div class="album-meta" data-event-click="track.play">
       <img data-bind-src="track.icon" />
       <span data-bind="track.name" class="album-name"></span>
     </div>
@@ -18,8 +18,8 @@
 <h3 class="nav-section-title">Popular Albums</h3>
 <img class="loading" src="/assets/loader.gif" data-hideif="Album.popular">
 <ul class="list albums">
-  <li class="album-list-item clearfix" data-foreach-album="Album.popular" data-event-click="showAlbumTracks">
-    <div class="album-meta">
+  <li class="album-list-item clearfix" data-foreach-album="Album.popular">
+    <div class="album-meta" data-event-click="showAlbumTracks">
       <img data-bind-src="album.icon" />
       <span class="album-name" data-bind="album.name"></span>
     </div>
