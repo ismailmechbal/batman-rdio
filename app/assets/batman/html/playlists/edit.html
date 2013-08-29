@@ -7,12 +7,13 @@
 
 <h3 class="nav-section-title" data-hideif="playlist.tracks.length">Empty Playlist</h3>
 
-<ul class="list">
+<ul class="list" id="playlist-items">
   <li class="album-list-item clearfix" data-foreach-track="playlist.tracks">
     <div class="album-meta" data-event-click="track.play">
       <img data-bind-src="track.icon" />
       <span data-bind="track.name" class="album-name"></span>
     </div>
+    <a class="handle">=</a>
     <a class="button" data-event-click="removeTrack"><span class="remove">x</span></a>
   </li>
 </ul>

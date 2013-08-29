@@ -38,7 +38,7 @@ ul {
   color: #ACACAC;
   text-shadow: 0 1px #fff;
   letter-spacing: 0.2em;
-  font-weight: 300;  
+  font-weight: 300;
   border-bottom: 1px solid #dfdfdf;
   border-top: 1px solid #fff;
   box-shadow: 0 -1px 0 #e7e7e7;
@@ -226,7 +226,7 @@ ul {
   clear: both;
   cursor: pointer;
 
-  .button {
+  .button, .handle {
     float: right;
     width: 10%;
     padding: 0;
@@ -248,7 +248,7 @@ ul {
     background-color: #70b9f4;
   }
 
-  &:hover > .album-meta {  
+  &:hover > .album-meta {
     color: white;
     background-color: #3092d6;
   }
@@ -268,9 +268,9 @@ ul {
     height: 36px;
     clear: both;
 
-    .track-name { 
-      padding: 8px 0px; 
-      display: inline-block; 
+    .track-name {
+      padding: 8px 0px;
+      display: inline-block;
       margin-left: 10px;
       max-width: 330px;
       white-space: nowrap;

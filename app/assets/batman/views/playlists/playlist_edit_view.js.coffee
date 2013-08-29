@@ -1,4 +1,9 @@
 class Rdio.PlaylistsEditView extends Batman.View
+  viewDidAppear: ->
+    $('#playlist-items').sortable
+      handle: '.handle'
+      revert: true
+
   showAlbumTracks: (node, event, view) ->
     album = view.get('album')
     album.set('showTracks', !album.get('showTracks'))
