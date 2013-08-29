@@ -14,3 +14,9 @@ class Rdio.Album extends Batman.Model
       popular = new Batman.Set
       popular.add(Rdio.Album.createFromJSON(album)) for album in response
       deliver(error, popular)
+
+  @search: (query, callback) ->
+    @request 'search', data: {query, types: "Album", extras: "tracks"}, (error, response) ->
+      results = new Batman.Set
+      results.add(Rdio.Album.createFromJSON(album)) for album in response?.results
+      callback(error, results)

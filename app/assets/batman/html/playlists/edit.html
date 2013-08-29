@@ -5,6 +5,8 @@
   <div class="clear"></div>
 </div>
 
+<h3 class="nav-section-title" data-hideif="playlist.tracks.length">Empty Playlist</h3>
+
 <ul class="list">
   <li class="album-list-item clearfix" data-foreach-track="playlist.tracks">
     <div class="album-meta" data-event-click="track.play">
@@ -15,21 +17,57 @@
   </li>
 </ul>
 
-<h3 class="nav-section-title">Popular Albums</h3>
-<img class="loading" src="/assets/loader.gif" data-hideif="Album.popular">
-<ul class="list albums">
-  <li class="album-list-item clearfix" data-foreach-album="Album.popular">
-    <div class="album-meta" data-event-click="showAlbumTracks">
-      <img data-bind-src="album.icon" />
-      <span class="album-name" data-bind="album.name"></span>
-    </div>
-    <a data-event-click="addAlbum" class="button"><span class="add">+</span></a>
+<div class="navigation">
+  <h1>Add Tracks from Rdio</h1>
+  <form data-event-submit="searchRdio" class="search-rdio-form">
+    <input type="search" data-bind="searchQuery" placeholder="Search Rdio Albums..." />
+    <input type="submit" value="Go" />
+  </form>
+</div>
 
-    <ul class="list" data-showif="album.showTracks">
-      <li class="track-meta" data-foreach-track="album.tracks">
-        <span data-bind="track.name" class="track-name"></span>
-        <a data-event-click="addTrack" class="button"><span class="add">+</span></a>
-      </li>
-    </ul>
-  </li>
-</ul>
+<div data-showif="isSearching">
+  <h3 class="nav-section-title">
+    Search Results
+    <a class="button" data-event-click="clearSearch"><span class="remove">x</span></a>
+  </h3>
+  <img class="loading" src="/assets/loader.gif" data-hideif="searchResults.length">
+
+  <ul class="list albums">
+    <li class="album-list-item clearfix" data-foreach-album="searchResults">
+      <div class="album-meta" data-event-click="showAlbumTracks">
+        <img data-bind-src="album.icon" />
+        <span class="album-name" data-bind="album.name"></span>
+      </div>
+      <a data-event-click="addAlbum" class="button"><span class="add">+</span></a>
+
+      <ul class="list" data-showif="album.showTracks">
+        <li class="track-meta" data-foreach-track="album.tracks">
+          <span data-bind="track.name" class="track-name"></span>
+          <a data-event-click="addTrack" class="button"><span class="add">+</span></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h3 class="nav-section-title">Popular Albums</h3>
+  <img class="loading" src="/assets/loader.gif" data-hideif="Album.popular.length">
+
+  <ul class="list albums">
+    <li class="album-list-item clearfix" data-foreach-album="Album.popular">
+      <div class="album-meta" data-event-click="showAlbumTracks">
+        <img data-bind-src="album.icon" />
+        <span class="album-name" data-bind="album.name"></span>
+      </div>
+      <a data-event-click="addAlbum" class="button"><span class="add">+</span></a>
+
+      <ul class="list" data-showif="album.showTracks">
+        <li class="track-meta" data-foreach-track="album.tracks">
+          <span data-bind="track.name" class="track-name"></span>
+          <a data-event-click="addTrack" class="button"><span class="add">+</span></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

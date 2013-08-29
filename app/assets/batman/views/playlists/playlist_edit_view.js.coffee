@@ -15,3 +15,17 @@ class Rdio.PlaylistsEditView extends Batman.View
     playlist = view.lookupKeypath('playlist')
 
     playlist.get('tracks').add(track)
+
+  searchQuery: ''
+  searchResults: null
+  searchRdio: ->
+    @set('searchResults', null)
+    @set('isSearching', true)
+
+    Rdio.Album.search @get('searchQuery'), (error, results) =>
+      @set('searchResults', results)
+
+  clearSearch: ->
+    @set('searchResults', null)
+    @set('isSearching', false)
+    @set('searchQuery', '')
