@@ -17,8 +17,9 @@ class Rdio.PlaylistsController extends Rdio.ApplicationController
     @playlist.save =>
       @redirect(@playlist)
 
-  update: (params) ->
-    @redirect(@playlist)
+  update: ->
+    @playlist.save =>
+      @redirect(@playlist)
 
   destroy: (params) ->
 

@@ -5,7 +5,7 @@ class Rdio.Track extends Batman.Model
   @persist Rdio.RdioStorage
 
   @primaryKey: 'key'
-  @encode 'name', 'duration', 'icon', 'artist'
+  @encode 'name', 'duration', 'icon', 'artist', 'key'
 
   @belongsTo 'album', foreignKey: 'album_key'
 
