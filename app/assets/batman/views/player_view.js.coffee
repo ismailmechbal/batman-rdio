@@ -20,7 +20,6 @@ class Rdio.PlayerView extends Batman.View
 
       R.player.on 'change:position', (time) =>
         duration = Rdio.get('currentTrack.duration')
-        console.log time, duration
         @set('currentPosition', (time / duration) * 100)
 
   playPause: ->
