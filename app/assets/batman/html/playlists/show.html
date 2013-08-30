@@ -6,8 +6,11 @@
 </div>
 
 <ul class="list">
-  <li data-foreach-track="playlist.tracks" data-event-click="track.play">
-    <img data-bind-src="track.icon" />
-    <span data-bind="track.name"></span>
+  <li class="album-list-item clearfix" data-foreach-track="playlist.tracks" data-event-click="track.play">
+    <div class="album-meta">
+      <img data-bind-src="track.icon" />
+      <span data-bind="track.name"></span>
+    </div>
+    <a class="button"><span class="remove">></span></a>
   </li>
 </ul>
