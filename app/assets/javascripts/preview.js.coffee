@@ -16,7 +16,10 @@ onMessage = (event) ->
     Rdio.run()
 
   else if event.data == 'reload'
-    window.location.reload()
+    if window.location.search.indexOf('preview') == -1
+      window.location += '?preview=true'
+    else
+      window.location.reload()
 
 window.addEventListener 'message', onMessage, false
 
