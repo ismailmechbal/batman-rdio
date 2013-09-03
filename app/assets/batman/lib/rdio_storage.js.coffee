@@ -1,6 +1,6 @@
 class Rdio.RdioStorage extends Batman.RestStorage
   request: (env, next) ->
-    R.ready ->
+    R?.ready ->
       R.request
         method: env.options.action
         content: env.options.data

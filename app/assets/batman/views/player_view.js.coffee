@@ -8,7 +8,7 @@ class Rdio.PlayerView extends Batman.View
     $(@node).find('.playhead').css('left', position + '%')
 
   viewDidAppear: ->
-    R.ready =>
+    R?.ready =>
       Rdio.observe 'currentTrack', (track) ->
         if track
           R.player.play({source: track.get('key')})
