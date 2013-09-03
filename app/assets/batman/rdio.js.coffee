@@ -4,7 +4,9 @@
 #= require batman/batman.rails
 
 #= require jquery
+#!{jquery_ui appear
 #= require jquery.ui.sortable
+#!}
 #= require batman/batman.jquery
 
 #= require_self
@@ -15,12 +17,12 @@
 #= require_tree ./views
 
 Batman.config.pathToHTML = '/assets/html'
-Batman.View::cache = false
 
 class Rdio extends Batman.App
   @resources 'playlists'
+#!{tracks_scaffold appear
   @resources 'tracks'
-
+#!}
   # @resources 'products'
   # @resources 'discounts', except: ['edit']
   # @resources 'customers', only: ['new', 'show']

@@ -1,11 +1,14 @@
 <div class="navigation">
-  <h1>Rdio Playlists</h1>
+  <h1>
+    <span #!{first_binding expect data-bind="playlists.length"#!}></span> Playlists
+  </h1>
+<!--#{route_binding expect-->
   <a data-route="routes.playlists.new" class="fl">New Playlist</a>
-  <a data-event-click="toggleEditMode" class="fr" data-showif="playlists.length">Edit</a>
+<!--#}-->
   <div class="clear"></div>
 </div>
 
-<h3 class="nav-section-title" data-hideif="playlists.length">No playlists :(</h3>
+<h3 class="nav-section-title" #!{showif_binding expect data-showif="playlists.empty"#!}>No playlists :(</h3>
 
 <ul class="list">
   <li class="playlist-item" data-foreach-list="playlists">

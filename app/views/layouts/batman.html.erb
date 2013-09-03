@@ -6,7 +6,7 @@
 
   <script src="http://www.rdio.com/api/api.js?client_id=CGLDQweDHtrSZL-slIiYAQ&helper=/rdio_helper.html"></script>
 
-<!-- #!{ignore -->
+<!--#{ignore -->
   <% if @preview %>
 
   <%= javascript_include_tag "jquery" %>
@@ -19,12 +19,12 @@
   <%= javascript_include_tag "preview" %>
 
   <% else %>
-<!-- #!} -->
+<!--#}-->
   <%= javascript_include_tag "rdio" %>
   <script type="text/javascript">$(function() { Rdio.run(); });</script>
-<!-- #!{ignore -->
+<!--#{ignore -->
   <% end %>
-<!-- #!} -->
+<!--#}-->
 
 
   <%= csrf_meta_tags %>
@@ -34,7 +34,7 @@
 <div class="wrapper">
   <div class="content">
 
-    <div class="playerview" data-view="PlayerView"></div>
+    <div class="playerview" #!{player_view expect data-view="PlayerView"#!}></div>
 
     <div class="main" data-yield="main"></div>
 
