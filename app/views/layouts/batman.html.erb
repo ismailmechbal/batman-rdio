@@ -4,21 +4,28 @@
   <title>Batman Rdio</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
 
-  <% if @preview %>
-    <%= javascript_include_tag "jquery" %>
-    <%= javascript_include_tag "batman/es5-shim" %>
-    <%= javascript_include_tag "batman/batman" %>
-    <%= javascript_include_tag "batman/batman.jquery" %>
-    <%= javascript_include_tag "batman/batman.rails" %>
-
-    <%= javascript_include_tag "coffee-script" %>
-    <%= javascript_include_tag "preview" %>
-  <% else %>
-    <%= javascript_include_tag "rdio" %>
-    <script type="text/javascript">$(function() { Rdio.run(); });</script>
-  <% end %>
-
   <script src="http://www.rdio.com/api/api.js?client_id=CGLDQweDHtrSZL-slIiYAQ&helper=/rdio_helper.html"></script>
+
+<!-- #!{ignore -->
+  <% if @preview %>
+
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "batman/es5-shim" %>
+  <%= javascript_include_tag "batman/batman" %>
+  <%= javascript_include_tag "batman/batman.jquery" %>
+  <%= javascript_include_tag "batman/batman.rails" %>
+
+  <%= javascript_include_tag "coffee-script" %>
+  <%= javascript_include_tag "preview" %>
+
+  <% else %>
+<!-- #!} -->
+  <%= javascript_include_tag "rdio" %>
+  <script type="text/javascript">$(function() { Rdio.run(); });</script>
+<!-- #!{ignore -->
+  <% end %>
+<!-- #!} -->
+
 
   <%= csrf_meta_tags %>
 </head>

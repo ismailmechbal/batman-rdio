@@ -31,7 +31,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-#!{gemfile
+#!{gemfile expect
 gem 'batman-rails'
 #!}
 

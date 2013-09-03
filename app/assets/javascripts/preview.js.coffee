@@ -1,3 +1,4 @@
+#!ignore
 origin = window.opener
 
 onMessage = (event) ->
