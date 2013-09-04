@@ -2,19 +2,17 @@
   <h1>
     <span #!{first_binding expect data-bind="playlists.length"#!}></span> Playlists
   </h1>
-<!--#{route_binding expect-->
-  <a data-route="routes.playlists.new" class="fl">New Playlist</a>
-<!--#}-->
+  <a #!{route_bindings expect data-route="routes.playlists.new"#!} class="fl">New Playlist</a>
   <div class="clear"></div>
 </div>
 
-<h3 class="nav-section-title" #!{showif_binding expect data-showif="playlists.empty"#!}>No playlists :(</h3>
+<h3 class="nav-section-title" #!{showif_binding expect data-showif="playlists.isEmpty"#!}>No playlists :(</h3>
 
 <ul class="list">
-  <li class="playlist-item" data-foreach-list="playlists">
-    <a class="playlist-link" data-route="list">
-      <img data-bind-src="list.icon" />
-      <span class="playlist-name" data-bind="list.name"></span>
+  <li class="playlist-item" #!{foreach_binding expect data-foreach-list="playlists"#!}>
+    <a class="playlist-link" #!{route_bindings expect data-route="list"#!}>
+      <img #!{attribute_binding expect data-bind-src="list.icon"#!} />
+      <span class="playlist-name" #!{foreach_binding expect data-bind="list.name"#!}>Loading...</span>
     </a>
   </li>
 </ul>

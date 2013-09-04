@@ -1,6 +1,9 @@
 class Rdio.PlayerView extends Batman.View
+#!{view_source expect
   source: 'player/main'
+#!}
 
+#!{viewDidAppear appear
   viewDidAppear: ->
     R?.ready =>
       Rdio.observe 'currentTrack', (track) ->
@@ -17,6 +20,7 @@ class Rdio.PlayerView extends Batman.View
         position = (time / duration) * 100
 
         $('.playhead', @node).css('left', position + '%')
+#!}
 
   playPause: ->
     if @get('isPlaying')

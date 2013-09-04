@@ -1,6 +1,6 @@
 class Rdio.PlaylistsController extends Rdio.ApplicationController
   routingKey: 'playlists'
-#!{before_action expect
+#!{fast_forward appear
   @beforeAction 'fetchPlaylist', only: ['show', 'edit']
 #!}
   index: (params) ->
@@ -12,21 +12,21 @@ class Rdio.PlaylistsController extends Rdio.ApplicationController
   edit: (params) ->
 
   new: (params) ->
-#!{playlist_create expect
+#!{fast_forward appear
     @set('playlist', new Rdio.Playlist)
 #!}
   create: ->
-#!{playlist_create expect
+#!{fast_forward appear
     @playlist.save =>
       @redirect(@playlist)
 #!}
   update: ->
-#!{playlist_update expect
+#!{fast_forward appear
     @playlist.save =>
       @redirect(@playlist)
 #!}
   destroy: (params) ->
-#!{before_action expect
+#!{fast_forward appear
   fetchPlaylist: (params) ->
     Rdio.Playlist.find params.id, @errorHandler (list) =>
       @set('playlist', list)
